@@ -2,6 +2,9 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
+    buildToolsVersion '26.0.2'
+
+
 
     defaultConfig {
         applicationId "com.baiiu.dropdownmenu"
@@ -19,11 +22,12 @@ android {
 }
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation project(':filter-lib')
-    //noinspection GradleCompatible
-    implementation 'com.android.support:appcompat-v7:25.3.0'
-    implementation 'com.jakewharton:butterknife:8.8.1'
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:25.3.0'
+    compile 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
-    implementation 'com.android.support:recyclerview-v7:25.3.0'
+    compile 'com.android.support:recyclerview-v7:25.3.0'
+    compile project(':filter-lib')
+
+
 }
